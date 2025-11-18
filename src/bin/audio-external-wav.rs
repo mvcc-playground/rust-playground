@@ -15,8 +15,10 @@ fn main() -> Result<()> {
         .unwrap_or_else(|| "5".to_string())
         .parse()
         .unwrap_or(5);
+
     let out_dir = PathBuf::from(".tmp");
     std::fs::create_dir_all(&out_dir).context("Erro ao criar diretório de saída")?;
+
     let wav_out = out_dir.join("meu_audio.wav");
 
     // 1) Seleciona host e dispositivo de entrada padrão
